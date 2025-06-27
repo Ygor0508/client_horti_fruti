@@ -3,6 +3,7 @@
 import { useClienteStore } from "@/context/ClienteContext"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import Image from "next/image";
 
 export function Header() {
     const { cliente, deslogaCliente } = useClienteStore()
@@ -23,7 +24,8 @@ export function Header() {
         <nav className="border-orange-500 bg-orange-400 dark:bg-orange-800 dark:border-orange-700">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="./fusca.png" className="h-12" alt="Logo Herbie" />
+                    {/* <Image src="./fusca.png" className="h-12" alt="Logo Herbie" /> */}
+                    <Image src="/fusca.png" width={48} height={48} alt="Logo Herbie" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                         Feirô 
                     </span>

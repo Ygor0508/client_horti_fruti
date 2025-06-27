@@ -6,8 +6,8 @@ export interface MercadoriaItf {
     nome: string
     preco: number
     quantidade: number
-    categoria: String
-    localizacao: String
+    categoria: string
+    localizacao: string
     destaque: boolean
     foto: string
     createdAt: Date

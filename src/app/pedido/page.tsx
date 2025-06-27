@@ -3,11 +3,11 @@ import './page.css'
 import { useEffect, useState } from "react";
 import { useClienteStore } from "@/context/ClienteContext";
 import { PedidoItf } from "@/utils/types/PedidoItf";
-import { toast } from 'sonner';
+// import { toast } from 'sonner';
 
-type Inputs = {
-  descricao: string
-}
+// type Inputs = {
+//   descricao: string
+// }
 
 export default function Pedido() {
   // const params = useParams()
@@ -17,14 +17,25 @@ export default function Pedido() {
 
   // const { register, handleSubmit, reset } = useForm<Inputs>()
 
+  // useEffect(() => {
+  //   async function buscaDados() {
+  //     const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/pedido/${cliente.id}`)
+  //     const dados = await response.json()
+  //     setPedido(dados)
+  //   }
+  //   buscaDados()
+  // }, [])
+
   useEffect(() => {
-    async function buscaDados() {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/pedido/${cliente.id}`)
-      const dados = await response.json()
-      setPedido(dados)
-    }
+  async function buscaDados() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/pedido/${cliente.id}`)
+    const dados = await response.json()
+    setPedido(dados)
+  }
+  if (cliente.id) { // Adicione esta verificação
     buscaDados()
-  }, [])
+  }
+}, [cliente.id])
 
 
   // para retornar apenas a data do campo no banco de dados
