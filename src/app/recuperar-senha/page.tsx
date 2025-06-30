@@ -9,7 +9,7 @@ type Inputs = {
 }
 
 export default function RecuperarSenha() {
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>()
+    const { register, handleSubmit } = useForm<Inputs>()
     const router = useRouter()
 
     async function solicitarRecuperacao(data: Inputs) {
@@ -26,7 +26,7 @@ export default function RecuperarSenha() {
             } else {
                 toast.error("Erro ao processar a solicitação")
             }
-        } catch (error) {
+        } catch {
             toast.error("Erro ao conectar com o servidor")
         }
     }

@@ -38,7 +38,7 @@ export default function Login() {
       } else {
         toast.error("E-mail ou senha incorretos")
       }
-    } catch (error) {
+    } catch {
       toast.error("Erro ao conectar com o servidor")
     }
   }

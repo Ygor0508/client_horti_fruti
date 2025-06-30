@@ -14,7 +14,7 @@ type Inputs = {
 }
 
 export default function Cadastro() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>()
+    const { register, handleSubmit, watch } = useForm<Inputs>()
     const router = useRouter()
     const senha = watch("senha")
 
@@ -44,7 +44,7 @@ export default function Cadastro() {
                 const error = await response.json()
                 toast.error(error.message || "Erro ao realizar cadastro")
             }
-        } catch (error) {
+        } catch {
             toast.error("Erro ao conectar com o servidor")
         }
     }
