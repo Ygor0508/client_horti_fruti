@@ -21,12 +21,11 @@ export function Header() {
     <header className="bg-green-800 shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          {/* <Image src="/fusca.png" alt="Logo Herbie" className="h-10 w-auto" /> */}
           <Image
-            src="/fusca.png"
-            alt="A cool Fusca"
-            width={50}  // Desired width in pixels
-            height={30} // Desired height in pixels
+            src="/logo.png"
+            alt="Feirô"
+            width={50}  
+            height={30} 
           />
           <span className="text-2xl font-bold text-white">Feirô</span>
         </Link>

@@ -2,14 +2,14 @@
 import { MercadoriaItf } from "@/utils/types/MercadoriaItf";
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react";
-import { useClienteStore } from "@/context/ClienteContext"; // IMPORTE seu contexto de cliente
+import { useClienteStore } from "@/context/ClienteContext"; 
 import { toast } from "sonner";
 import Image from "next/image"
 
 
 export default function Detalhes() {
   const params = useParams()
-  const { cliente } = useClienteStore() // pegando cliente logado
+  const { cliente } = useClienteStore() 
 
   const [mercadoria, setMercadoria] = useState<MercadoriaItf>()
 
@@ -41,7 +41,7 @@ export default function Detalhes() {
         status: "EM_PREPARACAO",
         mercadoria_id: Number(params.mercadoria_id),
         usuario_id: cliente.id
-        // descricao: `Compra da mercadoria: ${mercadoria?.nome ?? ''}`
+        
       })
     })
 
@@ -76,6 +76,8 @@ console.log("Erro ao adicionar pedido:", textoErro)
               className="object-cover w-full rounded-t-lg h-96 md:h-2/4 md:w-2/4 md:rounded-none md:rounded-s-lg"
               src={mercadoria.foto}
               alt="Foto da mercadoria"
+              width={1000}
+              height={1000}
             />
             <div className="flex flex-col justify-between p-4 leading-normal">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

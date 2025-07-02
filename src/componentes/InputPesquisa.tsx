@@ -15,7 +15,7 @@ export function InputPesquisa({ setMercadorias }: InputPesquisaProps) {
     const { register, handleSubmit, reset, setFocus } = useForm<Inputs>()
 
     async function enviaPesquisa(data: Inputs) {
-        // alert(data.termo)
+        
         if (data.termo.length < 2) {
             toast.error("Informe, no mínimo, 2 caracteres")
             return

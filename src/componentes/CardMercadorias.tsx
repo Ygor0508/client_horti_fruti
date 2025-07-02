@@ -7,9 +7,8 @@ export function CardMercadoria({ data }: { data: MercadoriaItf }) {
 
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-      <Image className="rounded-t-lg" src={data.foto} alt="Foto" />
+      <Image className="rounded-t-lg" src={data.foto} alt="Foto" width={150} height={150} />
       <div className="p-5">
-        {/* 👇 usa a variável protegida */}
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {data.nome} <br />
           Quantidade:&nbsp;
