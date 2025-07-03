@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-// import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'; // Importe o useRouter para redirecionar
 import { Minus, Plus, Trash2, Check, Truck, Loader2 } from 'lucide-react';
@@ -164,7 +164,7 @@ export default function CartPage() {
                     <label className="cursor-pointer">
                       <input type="checkbox" checked={selectedItems.includes(item.id)} onChange={() => handleSelectItem(item.id)} className="h-5 w-5 rounded border-gray-300 text-green-600 focus:ring-green-500" />
                     </label>
-                    <img src={item.mercadoria.foto} alt={item.mercadoria.nome} width={60} height={60} className="rounded-md bg-orange-100 p-1" />
+                    <Image src={item.mercadoria.foto} alt={item.mercadoria.nome} width={60} height={60} className="rounded-md bg-orange-100 p-1" />
                     <div>
                       <h3 className="font-semibold text-gray-800">{item.mercadoria.nome}</h3>
                       <p className="text-sm text-gray-500">{item.mercadoria.descricao}</p>

@@ -21,3 +21,24 @@
 // };
 
 // module.exports = nextConfig;
+
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      // CUIDADO: As regras abaixo permitem imagens de QUALQUER LUGAR da internet.
+      // Isso pode levar a vulnerabilidades de segurança e custos inesperados.
+      {
+        protocol: 'https',
+        hostname: '**', // Permite qualquer hostname
+      },
+      {
+        protocol: 'http',
+        hostname: '**', // Permite qualquer hostname
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;

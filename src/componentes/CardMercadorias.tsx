@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useClienteStore } from "@/context/ClienteContext";
 import { toast } from "sonner";
+import Image from "next/image";
 
 // A interface continua com 'feiranteId' opcional para manter a flexibilidade
 interface CardMercadoriaProps {
@@ -52,7 +53,7 @@ export function CardMercadoria({ data, feiranteId }: CardMercadoriaProps) {
   return (
     <div className="w-full max-w-[280px] bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden transition hover:shadow-lg flex flex-col">
       <div className="w-full h-45 bg-gray-100 overflow-hidden flex-shrink-0">
-        <img
+        <Image
           src={data.foto}
           alt={data.nome}
           className="w-full h-full object-cover"

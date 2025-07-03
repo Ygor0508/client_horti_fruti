@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useClienteStore } from "@/context/ClienteContext"; // Importe o hook do contexto
 import { toast } from "sonner"
+import Image from "next/image";
 
 export function CardMercadoria({ data }: { data: MercadoriaItf }) {
   const [quantity, setQuantity] = useState(1);
@@ -25,7 +26,7 @@ export function CardMercadoria({ data }: { data: MercadoriaItf }) {
     <div className="w-full max-w-[280px] bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden transition hover:shadow-lg flex flex-col">
       {/* Imagem */}
       <div className="w-full h-45 bg-gray-100 overflow-hidden flex-shrink-0">
-        <img
+        <Image
           src={data.foto}
           alt={data.nome}
           className="w-full h-full object-cover"

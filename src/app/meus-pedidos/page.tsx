@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import {
   Filter, Plus, ShoppingBag, CheckCircle, Clock, XCircle, Eye, Loader2, Truck, RotateCw
 } from 'lucide-react';
-// import Image from 'next/image';
+import Image from 'next/image';
 import { PedidoItf, Status } from '@/utils/types/PedidoItf';
 
 // Componente StatusBadge atualizado para usar o enum Status
@@ -210,7 +210,7 @@ export default function MeusPedidosPage() {
                     <td className="px-6 py-4 font-medium text-gray-900">#{String(pedido.id).padStart(3, '0')}</td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <img src={pedido.mercadoria.foto} alt={pedido.mercadoria.nome} width={40} height={40} className="rounded-md bg-gray-200 object-cover" />
+                        <Image src={pedido.mercadoria.foto} alt={pedido.mercadoria.nome} width={40} height={40} className="rounded-md bg-gray-200 object-cover" />
                         <div>
                           <p className="font-semibold text-gray-800">{pedido.mercadoria.nome}</p>
                           <p className="text-xs text-gray-500">{pedido.mercadoria.nome}</p>
