@@ -1,9 +1,6 @@
 'use client'
-// import { CardMercadoria } from "@/components/CardMercadoria";
 import { CardMercadoria } from "../componentes/CardMercadorias";
-// import { InputPesquisa } from "@/components/InputPesquisa";
 import { InputPesquisa } from "../componentes/InputPesquisa";
-// import { MercadoriaItf } from "@/utils/types/MercadorisItf";
 import { MercadoriaItf } from "../utils/types/MercadoriaItf";
 import { useEffect, useState } from "react";
 
