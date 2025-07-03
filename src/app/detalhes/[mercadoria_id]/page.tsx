@@ -174,7 +174,7 @@ export default function Detalhes() {
         
         try {
           erroData = JSON.parse(responseBody); // Tenta converter para JSON
-        } catch (e) {
+        } catch  {
           // Se a conversão falhar, a resposta não era JSON
           console.error("A resposta da API não é um JSON válido:", responseBody);
           toast.error(`Erro do servidor: ${response.status} - ${response.statusText}`);

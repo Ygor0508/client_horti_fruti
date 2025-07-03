@@ -128,16 +128,30 @@ export default function Pedido() {
   const [pedidos, setPedidos] = useState<PedidoItf[]>([])
   const { cliente } = useClienteStore()
 
-  async function buscaDados() {
-    if (!cliente.id) return;
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/pedido/${cliente.id}`)
-    const dados = await response.json()
-    setPedidos(dados)
-  }
+  // async function buscaDados() {
+  //   if (!cliente.id) return;
+  //   const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/pedido/${cliente.id}`)
+  //   const dados = await response.json()
+  //   setPedidos(dados)
+  // }
 
+  // useEffect(() => {
+  //   buscaDados()
+  // }, [cliente.id])
+
+
+  
   useEffect(() => {
+    async function buscaDados() {
+      if (!cliente.id) return;
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/pedido/${cliente.id}`)
+      const dados = await response.json()
+      setPedidos(dados)
+    }
+
     buscaDados()
   }, [cliente.id])
+
 
   async function handleDelete(pedidoId: number) {
     if (confirm("Tem certeza que deseja cancelar este pedido?")) {
