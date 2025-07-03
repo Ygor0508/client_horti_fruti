@@ -1,5 +1,6 @@
 import { UsuarioItf } from '@/utils/types/UsuarioItf'
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type ClienteStore = {
     cliente: UsuarioItf
@@ -7,11 +8,17 @@ type ClienteStore = {
     deslogaCliente: () => void
 }
 
-export const useClienteStore = create<ClienteStore>((set) => ({
+export const useClienteStore = create<ClienteStore>()(
+persist(
+    (set) => ({
     cliente: {} as UsuarioItf,
     logaCliente: (clienteLogado) => set({cliente: clienteLogado}),
     deslogaCliente: () => set({cliente: {} as UsuarioItf})
+}),
+{
+    name: 'cliente-store',
 }))
+    
 
 // export function useHydrateCliente() {
 //   const logaCliente = useClienteStore((state) => state.logaCliente)
