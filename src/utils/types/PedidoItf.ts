@@ -16,6 +16,7 @@ export enum Status {
 export interface PedidoItf {
   id: number
   quantidade: number
+  unidade_medida: string
   status: Status
   createdAt: string // DateTime no Prisma, aqui usa string
   updatedAt: string
